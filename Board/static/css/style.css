@@ -45,6 +45,13 @@ h1 {
     margin : 0;
 }
 
+input {
+    position : absolute;
+    display : block;
+    margin-left : 50%;
+    border-radius : 10px;
+}
+
 @keyframes opacityGrad {
     0% {opacity:1}
     100% {opacity:0}

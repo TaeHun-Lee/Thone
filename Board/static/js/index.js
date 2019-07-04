@@ -6,7 +6,7 @@ var yLimit;
 window.onload = function() {
     container = document.getElementById("container");
     postDiv = document.getElementById("postDiv");
-    //doorQ = [];
+    doorQ = [];
     doorQ[0] = document.createElement("div");
     doorQ[1] = document.createElement("div");
     container.appendChild(doorQ[0]);
@@ -25,6 +25,7 @@ window.onload = function() {
     setTimeout(doorOpen, 3000);
     setTimeout(thunder, 5000);
 };
+
 function doorOpen() {
     container.removeChild(postDiv);
     var timer = setInterval(function(){
@@ -43,11 +44,13 @@ function doorOpen() {
         doorQ[1].style.height = String(currentHeight1) + "em";
     }, 1);
 }
+
 function doorClose(timer) {
     timerReset(timer);
     doorQ[1].parentNode.removeChild(doorQ[1]);
     doorQ[0].parentNode.removeChild(doorQ[0]);
 }
+
 function thunder() {
     var elemArr = document.createElement("div");
     container.appendChild(elemArr);
@@ -99,6 +102,7 @@ function thunder() {
         elemArr.appendChild(newElem);
     }
 }
+
 function timerReset(timer){
     clearInterval(timer);
 }
