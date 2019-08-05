@@ -54,11 +54,11 @@ function doorClose(timer) {
 function thunder() {
     var elemArr = document.createElement("div");
     container.appendChild(elemArr);
-    var currentX = xLimit / 2 + 50;
+    var currentX = xLimit / 2;
     var currentY = -40;
     var count = 0;
     var timer = setInterval(function(){
-        thunderTime(-10, 10, (yLimit/2) - 20);
+        thunderTime(-10, 10, (yLimit/2) - 45);
     }, 1);
 
     function thunderTime(xvec, yvec, yvecLimit) {
@@ -81,7 +81,7 @@ function thunder() {
                 else {
                     timerReset(timer);
                     timer = setInterval(function(){
-                        thunderTime(15, -5, (yLimit/4) - 15);
+                        thunderTime(15, -5, (yLimit/8)-5);
                     }, 1);
                     count++;
                     return;
@@ -92,7 +92,7 @@ function thunder() {
             if (currentY <= yvecLimit && count < 2) {
                 timerReset(timer);
                 timer = setInterval(function(){
-                    thunderTime(-5, 15, yLimit);
+                    thunderTime(-4, 15, yLimit);
                 }, 1);
                 count++;
                 return;

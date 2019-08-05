@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+<link rel="stylesheet" href="{% static 'css/board.css' %}">
+<script>
+    window.onload = function() {
+        var link = document.getElementById("new_subLink");
+        link.onclick = function(){
+            var submit = "<input type='submit'>"
+            var body = "<input type='text' name='body'>"
+            var title = "<input type='text' name='title'>"
+            var formNode = "<form action={% url 'new_subPost' main_user.id currentUser_id %} method='POST'>" +
+                '{% csrf_token %}' + "<h5>Title : </h5>" + title + "<br>" + "<h5>Content : </h5>" + body + "<br>" + submit + "</form>";
+            var baseNode = link.parentElement;
+            baseNode.innerHTML += formNode;
+        };
+    }
+</script>
+    <div id="container">
+        <h1>{{main_user.username}}</h1>
+        <h2>{{main_user.date_created}}</h2>
+        {% if not post_users.all %}
+            <h1>No Sub Post Here</h1>
+        {% else %}
+            {% for post in post_users.all %}
+                <div class="userCard">
+                    <h3>- Title -</h3> <h2>{{ post.title }}</h2> <br>
+                    <h4>- User ID -</h4> <h2>{{ post.post_userObj.username }}</h2> <br>
+                    <h4>- Post Updated -</h4> <h3>{{ post.post_created }}</h3> <br>
+                    <h4>- Content -</h4> <h3>{{ post.body }}</h3> <br>
+                </div>
+            {% endfor %}
+        {% endif %}
+        <div class="newPostWrapper">
+            <button id="new_subLink">Write Sub Post</button>
+        </div>
+        <a href="{% url 'board' currentUser_id %}" class="homeButton">To Home</a>
+    </div>
+{% endblock %}

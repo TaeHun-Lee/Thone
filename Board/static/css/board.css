@@ -1,0 +1,65 @@
+html {
+    top : 0;
+    left : 0;
+    margin : 0;
+    padding : 0;
+}
+
+body {
+    top : 0;
+    left : 0;
+    margin : 0;
+    padding : 0;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin : 0;
+}
+
+a {
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+#container {
+    position : relative;
+    display : block;
+    margin : 0 auto 0 auto;
+    top : 0;
+    text-align : center;
+    z-index : 0;
+}
+
+#container > h1 {
+    font-size : 5em;
+}
+
+.userCard {
+    position : relative;
+    display : block;
+    margin : .5em 5em .5em 5em;
+    /* width : 80em; */
+    padding : 1em;
+    border : .5px solid #00AAB7;
+    transition: ease-in .3s;
+}
+
+.userCard:hover {
+    box-shadow : .5px .5px #5EC297;
+}
+
+.homeButton {
+    position : relative;
+    display: block;
+    padding : 1em;
+    margin : .5em 10em .5em 10em;
+    font-size : 2em;
+    box-shadow : .5px .5px .5px .5px #5EC297;
+}
+
+#new_sublink {
+    font-size : 5em;
+}

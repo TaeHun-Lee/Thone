@@ -1,0 +1,98 @@
+html {
+    top : 0;
+    left : 0;
+    margin : 0;
+    padding : 0;
+}
+
+body {
+    top : 0;
+    left : 0;
+    margin : 0;
+    padding : 0;
+}
+
+#container {
+    position : relative;
+    width : 96em;
+    height: 45.1em;
+    top : 0;
+    text-align : center;
+    background-image: linear-gradient(to bottom, #9abcc6, #b6cbd7, #d1dae5, #e9ebf1, #fdfdfd);
+    overflow-y : hidden;
+    z-index : 0;
+}
+
+#postDiv {
+    position : absolute;
+    width : 96rem;
+    height: 45.1rem;
+    font-size : 30em;
+    background : black;
+    text-align : center;
+    color : white;
+    z-index : 10;
+    animation : opacityGrad 3s ease forwards;
+}
+
+#mainPhrase {
+    position : relative;
+    display : block;
+    font-weight : bolder;
+    font-size : 10em;
+    animation : patternAnim 10s infinite;
+    animation-delay: 3s;
+}
+
+h1 {
+    margin : 0;
+}
+
+form {
+    position : absolute;
+    display : inline-block;
+    margin-left : -17.5rem;
+    top : 50%;
+}
+
+input {
+    border-radius : 1em;
+    width: 35rem;
+    height: 3rem;
+    background : transparent;
+    margin : auto auto 3em auto;
+    text-align : center;
+    border : .5px solid #00AAB7;
+    transition : 0.5s;
+}
+
+input[type="submit"] {
+    width : 10em;
+}
+
+input:focus {
+    border : 1px solid #E3FEFF;
+    outline : none;
+}
+
+.formSpan {
+    font-family: 'DM Serif Text', serif;
+    color : #496364;
+}
+
+@keyframes opacityGrad {
+    0% {opacity:1}
+    100% {opacity:0}
+}
+
+@keyframes patternAnim {
+    0% {
+        background-position : 100% 100%;
+    }
+    50% {
+        background-position : -200% 100%;
+    }
+    100% {
+        background-position : 100% 100%;
+    }
+}
